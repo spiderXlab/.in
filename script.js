@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
@@ -6,17 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hamburger.addEventListener("click", function () {
         navLinks.classList.toggle("active");
-        // Toggle Hamburger Menu Icon
         hamburger.innerHTML = navLinks.classList.contains("active") ? "Ｘ" : "☰";
     });
 
-    // Change color when menu item is clicked
-    navItems.forEach(item => {
-        item.addEventListener("click", function () {
-            navItems.forEach(nav => nav.classList.remove("active"));
-            this.classList.add("active");
-            navLinks.classList.remove("active");
-            hamburger.innerHTML = "☰";
-        });
+    // Smooth scrolling for Contact link
+    document.querySelector('.nav-item[href="#contact"]').addEventListener("click", function (event) {
+        event.preventDefault();
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        navLinks.classList.remove("active"); // Close menu after clicking
+        hamburger.innerHTML = "☰";
     });
 });
+
+
+    

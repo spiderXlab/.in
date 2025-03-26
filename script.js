@@ -8,6 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburger.innerHTML = navLinks.classList.contains("active") ? "Ｘ" : "☰";
     });
 
+    document.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+    } else {
+        navbar.style.boxShadow = "none";
+    }
+});
+
     // Smooth scrolling for Contact link
     document.querySelector('.nav-item[href="#contact"]').addEventListener("click", function (event) {
         event.preventDefault();

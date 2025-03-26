@@ -426,3 +426,94 @@ body {
     border-radius: 50%;
 
 }
+
+
+/* Footer */
+.back {
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #37474b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back a {
+    text-decoration: none;
+    color: white;
+}
+
+.contact a{
+  text-decoration: none;
+    color: white;
+}
+.contact p{
+   font-size:  1.5rem;
+   padding-top: 25px ;
+padding-bottom: 20px;
+}
+.contact {
+    background-color: #222f2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.contacta i {
+  margin-right: 10px;
+}
+
+.contacta {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.Social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.Social span {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222f2e;
+    border: 0.8px solid gray;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.Social span:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contacta {
+        flex-direction: column;
+    }
+}
+
+ .copy{
+   height:  50px;
+   background-color:  #0f1111;
+   color:  white;
+   text-align:  center;
+   font-size: 0.85rem;
+   padding-top: 5px;
+ }
+ .copy p{
+   padding-top: 5px;
+ }

@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
         navLinks.classList.remove("active"); // Close menu after clicking
         hamburger.innerHTML = "☰";
     });
+    // Smooth scrolling for "BACK TO TOP"
+    document.querySelector('.back a').addEventListener("click", function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 });
 
 

@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
-    const navItems = document.querySelectorAll(".nav-item");
 
     hamburger.addEventListener("click", function () {
         navLinks.classList.toggle("active");
         hamburger.innerHTML = navLinks.classList.contains("active") ? "Ｘ" : "☰";
     });
-
+    
     document.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
@@ -17,19 +16,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-    // Smooth scrolling for Contact link
+    // Smooth scrolling for "Contact" link
     document.querySelector('.nav-item[href="#contact"]').addEventListener("click", function (event) {
         event.preventDefault();
         document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
         navLinks.classList.remove("active"); // Close menu after clicking
         hamburger.innerHTML = "☰";
     });
+    
+    
+        // smooth scrolling for "sskill
+    document.querySelector('.nav-item[href="#skills"]').addEventListener("click", function (event) {
+        event.preventDefault();
+        document.getElementById("skills").scrollIntoView({ behavior: "smooth" });
+        navLinks.classList.remove("active"); // Close menu after clicking
+        hamburger.innerHTML = "☰";
+    });
+    
+    // smooth scrolling for "Projects"
+    document.querySelector('.nav-item[href="#projects"]').addEventListener("click", function (event) {
+        event.preventDefault();
+        document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+        navLinks.classList.remove("active"); // Close menu after clicking
+        hamburger.innerHTML = "☰";
+    });
+    
+    
+        // Smooth scrolling for "Home"
+    document.querySelector('.nav-item[href="#home"]').addEventListener("click", function (event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        navLinks.classList.remove("active"); // Close menu after clicking
+        hamburger.innerHTML = "☰";
+    });
+
     // Smooth scrolling for "BACK TO TOP"
     document.querySelector('.back a').addEventListener("click", function (event) {
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
-
-
-    

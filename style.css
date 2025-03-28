@@ -1,0 +1,761 @@
+ * {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+
+}
+
+/* Navbar Styles */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #37474b;
+
+    padding: 15px 20px;
+
+    color: white;
+   
+    border-bottom: 2px solid #ddd;
+    height: 50px;
+
+}
+
+/* Logo */
+
+.logo {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+}
+
+/* Navigation Links */
+
+.nav-links {
+
+    list-style: none;
+
+    display: flex;
+
+}
+
+.nav-links li {
+
+    margin: 0 15px;
+
+}
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+
+}
+
+/* Change color when clicked */
+
+.nav-links a.active {
+
+    background: #00796b;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 5px;
+
+}
+
+/* Hamburger Icon */
+
+.hamburger {
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: none;
+
+    padding: 5px 10px;
+
+    border: 2px solid gray;
+
+    border-radius: 5px;
+
+}
+
+/* Mobile Menu */
+
+@media screen and (max-width: 768px) {
+
+    .hamburger {
+
+        display: block;
+
+    }
+
+    .nav-links {
+
+        display: flex;
+
+        flex-direction: column;
+
+        background: #fff;
+
+        position: absolute;
+
+        top: 60px;
+
+        left: -100%;
+
+        width: 100%;
+
+        text-align: center;
+
+        transition: left 0.3s ease-in-out;
+
+    }
+
+    .nav-links.active {
+
+        left: 0;
+
+    }
+
+    .nav-links li {
+
+        padding: 15px 0;
+
+        border-bottom: 1px solid #ddd;
+
+    }
+
+    /* Menu Option Styling */
+
+    .nav-links a {
+
+        display: inline-block;
+
+        width: 150px;
+
+        text-align: center;
+
+        padding: 10px;
+
+        border: 2px solid #00796b;
+
+        color: #00796b;
+
+        border-radius: 5px;
+
+        transition: 0.3s ease-in-out;
+
+    }
+
+    .nav-links a.active,
+
+    .nav-links a:hover {
+
+        background: #00797c;
+
+        color: white;
+
+    }
+
+}
+
+/* Centered Image */
+
+.photo {
+  
+margin-top: 100px;
+margin-bottom: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+ /*   align-items: center;
+
+    height: 100vh; */
+
+}
+
+/* Circular Image */
+
+.circle {
+
+    width: 300px;
+
+    height: 300px;
+
+    background-color: black;
+
+    border-radius: 50%;
+
+    display: flex;
+
+  /*  justify-content: center;
+
+    align-items: center;  */
+
+    overflow: hidden; /* Ensures image stays inside the circle */
+
+}
+
+.circle img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover; /* Ensures proper scaling */
+
+    border-radius: 50%;
+
+}
+
+  .name
+  {
+  display: block;
+  /*justify-content: center;
+  align-items: center; */
+  text-align: center;
+ color:222f2e; 
+ 
+ } 
+ 
+ 
+  .break {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.breakhi{
+  border-bottom: 1px solid #d1d1d1;
+  margin-bottom: 50px;
+}
+#about {
+    text-align: center;
+    padding: 70px 20px;
+    background: #ffffff; /* Pure white background */
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+#about h2::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, #FFD700, #8B4513);
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 25px auto;
+    line-height: 1.8;
+    color: #444;
+    padding: 20px;
+    background: #f8f9fa; /* Soft light gray background */
+    border-left: 5px solid #007bff;
+    border-right: 5px solid #6610f2;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+#about p:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Skills Section Styling */
+#skills {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+#skills h2::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+       background: linear-gradient(90deg, #FFD700, #8B4513);
+        position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+/* Heading Styling */
+.h2 {
+   font-size: 2.2rem;
+    color: #222;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}  
+
+/* Underline Effect */
+.h2::after {
+ content: "";
+    width: 50px;
+    height: 4px;
+    background: #007bff;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Skill List Container */
+.skill-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+   
+}
+
+/* Individual Skill Styling */
+.skill {
+    color: White;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.4s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Unique Colors for Each Skill */
+.html {
+    background: linear-gradient(135deg, #FF5733, #C70039);
+    border: 1px solid #d1d1d1;
+}
+.css {
+    background: linear-gradient(135deg, #2980B9, #6DD5FA);
+    border: 1px solid #d1d1d1;
+}
+.js {
+    background: linear-gradient(135deg, #FFD700, #FFAE00);
+   border: 1px solid #d1d1d1;
+}
+
+
+.react {
+    background: linear-gradient(135deg, #00D8DF, #005F39);
+    border: 1px solid #d1d1d1;
+}
+.c {
+    background: linear-gradient(135deg, #5C2D91, #9B59B6);
+    border: 1px solid #d1d1d1;
+}
+
+/* Hover Effects */
+.skill:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Glowing Effect */
+.skill::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill:hover::before {
+    opacity: 1;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* White Background for Projects Section */
+#projects {
+    text-align: center;
+    padding: 60px;
+    background: #ffffff;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+#projects h2::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+   background: linear-gradient(90deg, #FFD700, #8B4513);
+        position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+
+/* Common Card Style (White Background + Light Gray Border) */
+.Comback-1, .Comback-2, .Comback-3 {
+    max-width: 320px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; /* Keep it white */
+    border-radius: 15px;
+    border: 1px solid #d1d1d1; /* Light Gray Border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Hover Effect for All Cards */
+.Comback-1:hover, .Comback-2:hover, .Comback-3:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Common Text Styling */
+.Comback-1 h3, .Comback-2 h3, .Comback-3 h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.4em;
+}
+
+.Comback-1 p, .Comback-2 p, .Comback-3 p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* ========== Comback-1 Button ========== */
+.Comback-1 a {
+    display: inline-block;
+    padding: 12px 20px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff7eb3, #ff4b2b);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1; /* Light Gray Border */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 65, 108, 0.5);
+}
+
+/* Hover Effect for Comback-1 Button */
+.Comback-1:hover a {
+    background: linear-gradient(135deg, #ff4b2b, #ff7eb3);
+    box-shadow: 0 6px 15px rgba(255, 65, 108, 0.7);
+}
+
+/* ========== Comback-2 Button ========== */
+.Comback-2 a {
+    display: inline-block;
+    padding: 12px 20px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1; /* Light Gray Border */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 114, 255, 0.5);
+}
+
+/* Hover Effect for Comback-2 Button */
+.Comback-2:hover a {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    box-shadow: 0 6px 15px rgba(0, 114, 255, 0.7);
+}
+
+/* ========== Comback-3 Button (Updated Orange Gradient) ========== */
+.Comback-3 a {
+    display: inline-block;
+    padding: 12px 20px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff9a00, #ff6a00); /* Orange Gradient */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1; /* Light Gray Border */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 154, 0, 0.5);
+}
+
+/* Hover Effect for Comback-3 Button */
+.Comback-3:hover a {
+    background: linear-gradient(135deg, #ff6a00, #ff9a00);
+    box-shadow: 0 6px 15px rgba(255, 154, 0, 0.7);
+}
+
+ /* CTA Section - Increased Width & Reduced Height */
+#cta {
+  margin-top:15px;
+    text-align: center;
+    padding: 20px; /* Reduced height */
+    background: radial-gradient(circle at center, #1a1a2e, #16213e);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(26, 26, 46, 0.5);
+    position: relative;
+    overflow: hidden;
+    width: 90%; /* Increased width */
+    margin: auto; /* Centering */
+}
+
+/* Animated Background - Stretched */
+#cta::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 250%; /* Increased width */
+    height: 120%; /* Shorter height */
+    background: conic-gradient(from 0deg, rgba(0, 255, 163, 0.5), transparent, rgba(255, 0, 102, 0.5));
+    animation: rotateGlow 8s linear infinite;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+/* Button Styling (No Change) */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* "Hire Me" Button */
+.btn.hire {
+    background: linear-gradient(145deg, #00d4ff, #0088cc);
+    border: 1px solid #d1d1d1;
+    box-shadow: 0px 0px 20px rgba(0, 212, 255, 0.8), inset 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.btn.hire:hover {
+    background: linear-gradient(145deg, #0088cc, #006699);
+    box-shadow: 0px 0px 30px rgba(0, 212, 255, 1), inset 0px 0px 15px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px) scale(1.03);
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* "Download Resume" Button */
+.btn.resume {
+    background: linear-gradient(145deg, #ff0066, #cc004d);
+    box-shadow: 0px 0px 20px rgba(255, 0, 102, 0.8), inset 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.btn.resume:hover {
+    background: linear-gradient(145deg, #cc004d, #990033);
+    box-shadow: 0px 0px 30px rgba(255, 0, 102, 1), inset 0px 0px 15px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px) scale(1.03);
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5); }
+    100% { box-shadow: 0px 0px 25px rgba(255, 255, 255, 1); }
+}
+ 
+ 
+
+/* Footer */
+.back {
+  margin-top: 15px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #37474b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.back a {
+    text-decoration: none;
+    color: white;
+}
+
+.contact a{
+  text-decoration: none;
+    color: white;
+}
+.contact p{
+   font-size:  1.5rem;
+  padding-top: 20px ;
+padding-bottom: 20px;
+}
+.contact {
+    background-color: #222f2e;
+    color: white;
+    text-align: center;
+    height: 300px;
+}
+.contacta i {
+  margin-right: 10px;
+}
+
+.contacta {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.Social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.Social span {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222f2e;
+    border: 0.8px solid gray;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.Social span:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contacta {
+        flex-direction: column;
+    }
+}
+
+ .copy{
+   height:  50px;
+   background-color:  #0f1111;
+   color:  white;
+   text-align:  center;
+   font-size: 0.85rem;
+   padding-top: 5px;
+ }
+ .copy p{
+   padding-top: 5px;
+ }
+ 
+ .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #37474b;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Add padding to the body so content does not get hidden behind navbar */
+body {
+    padding-top: 60px; /* Adjust based on your navbar height */
+    }

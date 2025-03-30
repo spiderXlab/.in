@@ -1078,7 +1078,7 @@ padding-bottom: 20px;
 
 }
 
-.Social span {
+.Social a{
 
     height: 35px;
 
@@ -1102,7 +1102,7 @@ padding-bottom: 20px;
 
 }
 
-.Social span:hover {
+.Social a:hover {
 
     transform: scale(1.1);
 

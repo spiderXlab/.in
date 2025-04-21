@@ -93,7 +93,7 @@ const slider = document.getElementById('gallerySlider');
 let scrollAmount = 0;
 
 setInterval(() => {
-  const slideWidth = 300; // 280px image + 20px gap
+  const slideWidth = 315; // 295px image + 20px gap
   if (scrollAmount + slider.clientWidth >= slider.scrollWidth) {
     scrollAmount = 0;
   } else {

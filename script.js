@@ -97,21 +97,6 @@ const loader = document.getElementById("loader");
 let currentIndex = 0;
 let slideInterval;
 
-// Wait until all images are loaded
-let totalImages = document.querySelectorAll(".slide img").length;
-let loadedCount = 0;
-
-document.querySelectorAll(".slide img").forEach(img => {
-  img.addEventListener("load", () => {
-    loadedCount++;
-    if (loadedCount === totalImages) {
-      loader.style.display = "none";
-      galleryContainer.style.display = "block";
-      startSlideShow();
-    }
-  });
-});
-
 // Create dots
 slides.forEach((_, i) => {
   const dot = document.createElement("span");
@@ -122,8 +107,8 @@ slides.forEach((_, i) => {
 const dots = dotsContainer.querySelectorAll("span");
 
 function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  dots.forEach(dot => dot.classList.remove("active"));
+  slides.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
   slides[index].classList.add("active");
   dots[index].classList.add("active");
 }
@@ -139,10 +124,26 @@ function prevSlide() {
 }
 
 function startSlideShow() {
-  slideInterval = setInterval(nextSlide, 3000);
+  slideInterval = setInterval(nextSlide, 5000);
 }
 
-// Keyboard controls
+// Load images and start
+let totalImages = slides.length;
+let loaded = 0;
+
+slides.forEach(slide => {
+  const img = slide.querySelector("img");
+  img.addEventListener("load", () => {
+    loaded++;
+    if (loaded === totalImages) {
+      loader.style.display = "none";
+      galleryContainer.style.display = "block";
+      startSlideShow();
+    }
+  });
+});
+
+// Keyboard nav
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") {
     clearInterval(slideInterval);
@@ -155,10 +156,10 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Dot navigation
-dots.forEach((dot, index) => {
+// Dot nav
+dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
-    currentIndex = index;
+    currentIndex = i;
     showSlide(currentIndex);
     clearInterval(slideInterval);
     startSlideShow();
@@ -172,13 +173,11 @@ document.addEventListener("touchstart", (e) => {
 });
 
 document.addEventListener("touchend", (e) => {
-  const diff = startX - e.changedTouches[0].screenX;
-  if (Math.abs(diff) > 50) {
+  let endX = e.changedTouches[0].screenX;
+  if (Math.abs(endX - startX) > 50) {
     clearInterval(slideInterval);
-    if (diff > 0) nextSlide();
+    if (endX < startX) nextSlide();
     else prevSlide();
     startSlideShow();
   }
-});
-    
 });

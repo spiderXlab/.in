@@ -77,4 +77,22 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+const slider = document.getElementById('gallerySlider');
+let scrollAmount = 0;
+
+setInterval(() => {
+  const slideWidth = 270; // 250px image + 20px gap
+  if (scrollAmount + slider.clientWidth >= slider.scrollWidth) {
+    scrollAmount = 0;
+  } else {
+    scrollAmount += slideWidth;
+  }
+  slider.scrollTo({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+}, 3000);
+    
+    
 });

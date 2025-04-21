@@ -50,6 +50,17 @@ document.addEventListener("DOMContentLoaded", function () {
         hamburger.innerHTML = "☰";
 
     });
+
+
+    // smooth scrolling for "gallery
+
+    document.querySelector('.nav-item[href="#gallery"]').addEventListener("click", function (event) {
+        event.preventDefault();
+        document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+        navLinks.classList.remove("active"); // Close menu after clicking
+        hamburger.innerHTML = "☰";
+
+    });
  
 
     // smooth scrolling for "Projects"

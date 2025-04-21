@@ -103,7 +103,7 @@ setInterval(() => {
     left: scrollAmount,
     behavior: 'smooth'
   });
-}, 3000);
+}, 5000);
     
     
 });

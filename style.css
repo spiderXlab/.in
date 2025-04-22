@@ -207,7 +207,7 @@ margin-bottom: 15px;
 
 /* Circular Image */
 
-.circle {
+.circl {
 
     width: 300px;
 
@@ -227,7 +227,7 @@ margin-bottom: 15px;
 
 }
 
-.circle img {
+.circl img {
 
     width: 100%;
 
@@ -925,66 +925,131 @@ margin-bottom: 15px;
 
 /* "Hire Me" Button */
 
+ /* CTA Section - Increased Width & Reduced Height */
+#cta {
+  background: white;
+  border: 1px solid #d1d1d1;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  width: 95%;
+  max-width: 700px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);/* 0 8px 20px rgba(0, 0, 0, 0.05); */
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+#cta.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#cta:hover {
+  transform: scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+}
+.blue-bg {
+  width: 180px;
+  height: 180px;
+  background: #00d4ff;
+  top: -60px;
+  left: -60px;
+}
+.red-bg {
+  width: 150px;
+  height: 150px;
+  background: #ff0066;
+  bottom: -50px;
+  right: -50px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.cta-heading {
+  font-size: 2rem;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 1;
+  flex-direction: row;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
 .btn.hire {
-
-    background: linear-gradient(145deg, #00d4ff, #0088cc);
-
-    border: 1px solid #d1d1d1;
-
-    box-shadow: 0px 0px 20px rgba(0, 212, 255, 0.8), inset 0px 0px 10px rgba(255, 255, 255, 0.3);
-
+  background: linear-gradient(145deg, #00d4ff, #0088cc);
 }
-
 .btn.hire:hover {
-
-    background: linear-gradient(145deg, #0088cc, #006699);
-
-    box-shadow: 0px 0px 30px rgba(0, 212, 255, 1), inset 0px 0px 15px rgba(255, 255, 255, 0.5);
-
-    transform: translateY(-3px) scale(1.03);
-
-    animation: pulse 1.5s infinite alternate;
-
+  background: linear-gradient(145deg, #0088cc, #006699);
+  transform: translateY(-2px) scale(1.04);
 }
-
-/* "Download Resume" Button */
 
 .btn.resume {
-
-    background: linear-gradient(145deg, #ff0066, #cc004d);
-
-    box-shadow: 0px 0px 20px rgba(255, 0, 102, 0.8), inset 0px 0px 10px rgba(255, 255, 255, 0.3);
-
+  background: linear-gradient(145deg, #ff0066, #cc004d);
 }
-
 .btn.resume:hover {
-
-    background: linear-gradient(145deg, #cc004d, #990033);
-
-    box-shadow: 0px 0px 30px rgba(255, 0, 102, 1), inset 0px 0px 15px rgba(255, 255, 255, 0.5);
-
-    transform: translateY(-3px) scale(1.03);
-
-    animation: pulse 1.5s infinite alternate;
-
+  background: linear-gradient(145deg, #cc004d, #990033);
+  transform: translateY(-2px) scale(1.04);
 }
 
-/* Glow Animation */
-
-@keyframes rotateGlow {
-
-    0% { transform: rotate(0deg); }
-
-    100% { transform: rotate(360deg); }
-
-}
-
-@keyframes pulse {
-
-    0% { box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5); }
-
-    100% { box-shadow: 0px 0px 25px rgba(255, 255, 255, 1); }
-
+@media (max-width: 480px) {
+  .cta-heading {
+    font-size: 1.5rem;
+  }
+  .btn-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .btn {
+    flex: 1 1 45%;
+    padding: 12px 0;
+    font-size: 14px;
+  }
 }
 
  

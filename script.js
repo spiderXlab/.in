@@ -88,12 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
-const slider = document.getElementById('gallerySlider');
-const slides = slider.querySelectorAll('.photo');
-const dotsContainer = document.getElementById('dotsContainer');
-let currentIndex = 0;
-let interval;
 
+    
 const slider = document.getElementById('gallerySlider');
 const slides = slider.querySelectorAll('.photo');
 const dotsContainer = document.getElementById('dotsContainer');
@@ -102,92 +98,95 @@ let interval;
 
 // Spinner timeout
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').style.display = 'none';
-    document.querySelector('.gallery').style.display = 'block';
-    initGallery();
-  }, 1500);
+setTimeout(() => {
+document.getElementById('loader').style.display = 'none';
+document.querySelector('.gallery').style.display = 'block';
+initGallery();
+}, 1500);
 });
 
 // Setup dots
 function createDots() {
-  slides.forEach((_, index) => {
-    const dot = document.createElement('span');
-    dot.textContent = index === 0 ? '●' : '○';
-    dot.addEventListener('click', () => {
-      goToSlide(index);
-    });
-    dotsContainer.appendChild(dot);
-  });
+slides.forEach((_, index) => {
+const dot = document.createElement('span');
+dot.textContent = index === 0 ? '●' : '○';
+dot.addEventListener('click', () => {
+goToSlide(index);
+});
+dotsContainer.appendChild(dot);
+});
 }
 
 // Update dots
 function updateDots(index) {
-  const dots = dotsContainer.querySelectorAll('span');
-  dots.forEach((dot, i) => {
-    dot.textContent = i === index ? '●' : '○';
-    dot.classList.toggle('active-dot', i === index);
-  });
+const dots = dotsContainer.querySelectorAll('span');
+dots.forEach((dot, i) => {
+dot.textContent = i === index ? '●' : '○';
+dot.classList.toggle('active-dot', i === index);
+});
 }
 
-// Go to specific slide
+// Slide to specific index
 function goToSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if (i === index) slide.classList.add('active');
-  });
+slides.forEach((slide, i) => {
+slide.classList.remove('active');
+if (i === index) {
+slide.classList.add('active');
+}
+});
 
-  slider.scrollTo({
-    left: index * slider.clientWidth,
-    behavior: 'smooth'
-  });
+slider.scrollTo({
+left: index * (320), // image + gap
+behavior: 'smooth'
+});
 
-  currentIndex = index;
-  updateDots(currentIndex);
+currentIndex = index;
+updateDots(currentIndex);
 }
 
 // Auto slide
 function startAutoSlide() {
-  interval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    goToSlide(currentIndex);
-  }, 5000);
+interval = setInterval(() => {
+currentIndex = (currentIndex + 1) % slides.length;
+goToSlide(currentIndex);
+}, 5000);
 }
 
-// Swipe control
+// Swipe control for mobile
 let startX = 0;
 slider.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
+startX = e.touches[0].clientX;
 });
 
 slider.addEventListener('touchend', (e) => {
-  const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) {
-    currentIndex = (currentIndex + 1) % slides.length;
-  } else if (endX - startX > 50) {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  }
-  goToSlide(currentIndex);
+const endX = e.changedTouches[0].clientX;
+if (startX - endX > 50) {
+currentIndex = (currentIndex + 1) % slides.length;
+} else if (endX - startX > 50) {
+currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+}
+goToSlide(currentIndex);
 });
 
 // Keyboard control
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') {
-    currentIndex = (currentIndex + 1) % slides.length;
-    goToSlide(currentIndex);
-  } else if (e.key === 'ArrowLeft') {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    goToSlide(currentIndex);
-  }
+if (e.key === 'ArrowRight') {
+currentIndex = (currentIndex + 1) % slides.length;
+goToSlide(currentIndex);
+} else if (e.key === 'ArrowLeft') {
+currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+goToSlide(currentIndex);
+}
 });
 
-// Initialize gallery
+// Init
 function initGallery() {
-  slides[0].classList.add('active');
-  createDots();
-  updateDots(0);
-  startAutoSlide();
-    }
+slides[0].classList.add('active');
+createDots();
+updateDots(0);
+startAutoSlide();
+}
+
 });
 
 

@@ -1220,78 +1220,100 @@ body {
   50% { opacity: 0.3; }
 }
 
+/* Loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid #333;
+  border-top: 8px solid #00f7ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
 /* Gallery */
 .gallery {
   padding: 40px 20px;
   text-align: center;
 }
 
-#gallery  h2 {
-
-    font-size: 2.5rem;
-
-    color: #111;
-
-    margin-bottom: 20px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1.5px;
-
-    font-weight: 700;
-
-    position: relative;
-
-    display: inline-block;
-
+#gallery h2 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
 }
 
 #gallery h2::after {
-
-    content: "";
-
-    width: 80px;
-
-    height: 5px;
-
-   background: linear-gradient(90deg, #FFD700, #8B4513);
-
-        position: absolute;
-
-    left: 50%;
-
-    bottom: -10px;
-
-    transform: translateX(-50%);
-
-    border-radius: 3px;
-
+  content: "";
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #FFD700, #8B4513);
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-radius: 3px;
 }
-
-
 
 .gallery-slider {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.gallery-slider::-webkit-scrollbar {
-  display: none;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .photo {
-  flex: 0 0 250px;
-  position: relative;
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
+.photo.active {
+  opacity: 1;
+}
+
 .photo img {
-  width: 100%;
-  height: 160px;
+  max-width: 90%;
+  height: 185px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -1300,11 +1322,6 @@ body {
 .photo p {
   margin-top: 8px;
   font-weight: 500;
-}
-
-/* Fade In Effect */
-.photo.active {
-  opacity: 1;
 }
 
 /* Dots */
@@ -1324,4 +1341,4 @@ body {
 .dots .active-dot {
   color: black;
   transform: scale(1.4);
-     }
+    }

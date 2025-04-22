@@ -136,7 +136,7 @@ slide.classList.add('active');
 });
 
 slider.scrollTo({
-left: index * (320), // image + gap
+left: index * (340), // image + gap
 behavior: 'smooth'
 });
 

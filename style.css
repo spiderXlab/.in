@@ -1276,16 +1276,26 @@ scroll-behavior: smooth;
 scrollbar-width: none;
 }
 
-.gallery-slider::-webkit-scrollbar {
-display: none;
-}
+
+
+    .gallery-slider {
+  display: flex;
+  justify-content: center;       /* center horizontally */
+  align-items: center;           /* center vertically if needed */
+  overflow: hidden;              /* no scrolling */
+  position: relative;            /* for absolutely positioned photos */
+  height: 220px;                 /* adjust height to fit image + text */
+    }
 
 .photo {
-flex: 0 0 320px;
-position: relative;
-opacity: 0;
-transition: opacity 1s ease-in-out;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 90vw;
+  max-width: 300px;
 }
+
+
 
 .photo img {
 width: 100%;

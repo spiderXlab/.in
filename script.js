@@ -94,6 +94,12 @@ const dotsContainer = document.getElementById('dotsContainer');
 let currentIndex = 0;
 let interval;
 
+const slider = document.getElementById('gallerySlider');
+const slides = slider.querySelectorAll('.photo');
+const dotsContainer = document.getElementById('dotsContainer');
+let currentIndex = 0;
+let interval;
+
 // Spinner timeout
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -124,17 +130,15 @@ function updateDots(index) {
   });
 }
 
-// Slide to specific index
+// Go to specific slide
 function goToSlide(index) {
   slides.forEach((slide, i) => {
     slide.classList.remove('active');
-    if (i === index) {
-      slide.classList.add('active');
-    }
+    if (i === index) slide.classList.add('active');
   });
 
   slider.scrollTo({
-    left: index * (270), // image + gap
+    left: index * slider.clientWidth,
     behavior: 'smooth'
   });
 
@@ -150,7 +154,7 @@ function startAutoSlide() {
   }, 5000);
 }
 
-// Swipe control for mobile
+// Swipe control
 let startX = 0;
 slider.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
@@ -177,13 +181,13 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Init
+// Initialize gallery
 function initGallery() {
   slides[0].classList.add('active');
   createDots();
   updateDots(0);
   startAutoSlide();
-                          }
+    }
 });
 
 

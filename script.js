@@ -187,6 +187,20 @@ updateDots(0);
 startAutoSlide();
 }
 
+    
+ const cta = document.getElementById("cta");
+
+  function revealCTA() {
+    const rect = cta.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      cta.classList.add("reveal");
+      window.removeEventListener("scroll", revealCTA);
+    }
+  }
+
+  window.addEventListener("scroll", revealCTA);
+  revealCTA();
+
 });
 
 

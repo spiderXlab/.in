@@ -914,6 +914,7 @@ margin-bottom: 15px;
     overflow: hidden;
 
     border-radius: 8px;
+    border: 1px solid gray;
 
     transition: all 0.3s ease-in-out;
 

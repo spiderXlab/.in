@@ -201,6 +201,20 @@ startAutoSlide();
   window.addEventListener("scroll", revealCTA);
   revealCTA();
 
+
+    function downloadAndOpen(event) {
+  event.preventDefault();
+  const link = document.createElement('a');
+  link.href = 'resume.pdf';
+  link.download = 'resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // Open in new tab
+  window.open('resume.pdf', '_blank');
+    }
+
 });
 
 

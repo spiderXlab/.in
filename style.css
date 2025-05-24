@@ -863,7 +863,7 @@ margin-bottom: 15px;
     color: white;
     text-decoration: none;
     border-radius: 8px;
-    border: 1px solid #4a5a65;
+    border: 1px solid #d1d1d1;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(95, 124, 138, 0.5);
 }
@@ -878,10 +878,10 @@ margin-bottom: 15px;
     padding: 12px 20px;
     font-weight: bold;
     background: linear-gradient(135deg, #64dd17, #aeea00); /* Electric Green Gradient */
-    color: #111;
+    color: white;
     text-decoration: none;
     border-radius: 8px;
-    border: 1px solid #8bc34a;
+    border: 1px solid d1d1d1;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(100, 221, 23, 0.5);
 }
@@ -896,11 +896,11 @@ margin-bottom: 15px;
     display: inline-block;
     padding: 12px 20px;
     font-weight: bold;
-    background: linear-gradient(135deg, #757575, #bdbdbd); /* Gunmetal Gradient */
-    color: #fff;
+    background: lhttps://spiderxlab.github.io/.in/inear-gradient(135deg, #757575, #bdbdbd); /* Gunmetal Gradient */
+    color: white;
     text-decoration: none;
     border-radius: 8px;
-    border: 1px solid #999;
+    border: 1px solid #d1d1d1;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(189, 189, 189, 0.4);
 }

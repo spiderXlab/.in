@@ -1,207 +1,223 @@
- <!doctype html>
+<!doctype html>
 <html lang="en"> 
- <head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Spider Lab</title> 
-  <link rel="stylesheet" href="./style.css"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
-  <script defer src="script.js"></script> 
- <meta name="google-site-verification" content="tUjivftYpLnPclVXVO8M-V3zZCqWg1uYwNxPuOxX2Gw" /></head> 
- <body> <!-- Navigation Bar --> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spider Lab</title>
+  <meta name="google-site-verification" content="tUjivftYpLnPclVXVO8M-V3zZCqWg1uYwNxPuOxX2Gw" />
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-KY4D0T+..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="script.js"></script>
+</head>
+
+<body> <!-- Navigation Bar --> 
   <nav class="navbar"> 
-   <div class="logo">
-    ＳＰＩＤＥＲ Ｘ
-   </div> 
-   <div class="hamburger" id="hamburger">
-    ☰
-   </div> 
-   <ul class="nav-links" id="nav-links"> 
-    <li><a href="#home" class="nav-item home">Home</a></li> 
-    <li><a href="#about" class="nav-item">About Us</a></li> 
-    <li><a href="#skills" class="nav-item">Skills</a></li> 
-    <li><a href="#projects" class="nav-item">Projects</a></li> 
-    <li><a href="#gallery" class="nav-item">Gallery</a></li>
-    <li><a href="resume.pdf" class="nav-item" aria-label="Download Resume" onclick="downloadAndOpen(event)">Resume</a></li>
-    <li><a href="#contact" class="nav-item">Contact</a></li>
-    
-   </ul> 
-  </nav> <!-- Centered Image --> 
+    <div class="logo">ＳＰＩＤＥＲ Ｘ</div> 
+    <div class="hamburger" id="hamburger">☰</div> 
+    <ul class="nav-links" id="nav-links"> 
+      <li><a href="#home" class="nav-item home">Home</a></li> 
+      <li><a href="#about" class="nav-item">About Us</a></li> 
+      <li><a href="#skills" class="nav-item">Skills</a></li> 
+      <li><a href="#projects" class="nav-item">Projects</a></li> 
+      <li><a href="#gallery" class="nav-item">Gallery</a></li>
+      <li><a href="resume.pdf" class="nav-item" aria-label="Download Resume" onclick="downloadAndOpen(event)">Resume</a></li>
+      <li><a href="#contact" class="nav-item">Contact</a></li>  
+    </ul> 
+  </nav> 
+
   <div class="phot"> 
-   <div class="circl"> 
-    <img src="logo.jpg" alt="Logo"> 
-   </div> 
+    <div class="circl"><img src="profile.jpg" alt="Logo"></div> 
   </div> 
-  <div class="name"> 
-   <p>𝗠.𝗔 𝗣𝗮𝘁𝗲𝗹</p> 
-   <p> Software Engineer</p> 
-  </div> <!-- About Section --> 
+
+  <div class="name">
+    <p>𝗠.𝗔 𝗣𝗮𝘁𝗲𝗹</p> 
+    <p> Software Engineer</p> 
+  </div>     
+  <!-- About Section --> 
+
   <section class="about" id="about"> 
-   <h2>About Me</h2> 
-  <p> I am <strong>M.A Patel</strong>, a passionate 𝗪𝗲𝗯 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 focused on creating elegant and high-performance web solutions. With expertise in <strong>HTML, CSS, JavaScript</strong>, and front-end frameworks, I specialize in building intuitive, responsive, and visually appealing websites. My goal is to blend creativity with functionality to enhance user experiences. I am always eager to learn and implement the latest web technologies to deliver cutting-edge solutions. Let’s build something remarkable together! </p> 
+    <h2>About Me</h2> 
+    <p> I am <strong>M.A Patel</strong>, a passionate 𝗪𝗲𝗯 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 focused on creating elegant and high-performance web solutions. With expertise in <strong>HTML, CSS, JavaScript</strong>, and front-end frameworks, I specialize in building intuitive, responsive, and visually appealing websites. My goal is to blend creativity with functionality to enhance user experiences. I am always eager to learn and implement the latest web technologies to deliver cutting-edge solutions. Let’s build something remarkable together! </p> 
   </section>
- <div class="break"></div> 
-<!-- Skills Section --> 
-  <section id="skills" class="skills"> 
-   <h2>Skills</h2> 
-   <div class="skill-list"> 
-    <div class="skill html">
-     HTML
-    </div> 
-    <div class="skill css">
-     CSS
-    </div> 
-    <div class="skill js">
-     JavaScript
-    </div> 
-    <div class="skill react">
-     React.js
-    </div> 
-    <div class="skill c">
-     C Programming
-    </div> 
-   </div> 
-  </section> 
-<div class="break"></div> 
-<!-- Projects Section --> 
-  <section id="projects" class="projects"> 
-   <h2>Projects</h2> 
-   <div class="Comback-1"> 
-    <h3>Devfolio</h3> 
-    <p>Go &amp; Check...👀</p> <a href="https://spiderxlab.github.io/.in/" target="_blank">View Project</a> 
-   </div> 
-   <div class="Comback-2"> 
-    <h3>Netflix</h3> 
-    <p>Go &amp; Check...👀</p> <a href="https://spiderxlab.github.io/netflix.in/" target="_blank">View Project</a> 
-   </div> 
-   <div class="Comback-3"> 
-    <h3>Amazon</h3> 
-    <p>Go &amp; Check...👀</p> <a href="https://spiderxlab.github.io/amazon.in/" target="_blank">View Project</a> 
-   </div> 
 
-   <div class="Comback-4"> 
-    <h3>Kavish Fabrication</h3> 
-    <p>Go &amp; Check...👀</p> <a href="https://spiderxlab.github.io/Kfw/" target="_blank">View Project</a> 
-   </div> 
+  <div class="break"></div><!-- Skills Section -->
 
-<div class="Comback-5"> 
-    <h3>Uploading</h3> 
-    <p>Coming Soon...👀</p> <a href="https://spiderxlab.github.io/Kfw/" target="_blank">View Project</a> 
-   </div> 
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skill-list">
 
+      <div class="skill html">
+       <i class="fa-brands fa-html5"></i>
+       <p>HTML</p>
+      </div>
 
-   <div class="Comback-6"> 
-    <h3> Uploading</h3> 
-    <p>Coming Soon..👀</p> <a href="https://spiderxlab.github.io/Kfw/" target="_blank">View Project</a> 
-   </div> 
+      <div class="skill css">
+       <i class="fa-brands fa-css3-alt"></i>
+       <p>CSS</p>
+      </div>
 
-<div class="Comback-7"> 
-    <h3>Uploading </h3> 
-    <p>Coming Soon...👀</p> <a href="https://spiderxlab.github.io/Kfw/" target="_blank">View Project</a> 
-   </div> 
+      <div class="skill js">
+       <i class="fa-brands fa-js"></i>
+       <p>JavaScript</p>
+      </div>
 
+      <div class="skill react">
+       <i class="fa-brands fa-react"></i>
+       <p>React.js</p>
+      </div>
 
-   
+      <div class="skill github">
+       <i class="fa-brands fa-github"></i>
+       <p>GitHub</p>
+      </div>
+
+      <div class="skill c">
+       <i class="fa-solid fa-code"></i>
+       <p>C Programming</p>
+      </div>
+
+    </div>
   </section>
-   <div class="break"></div>
-   <div id="loader"> 
-   <div class="spinner"></div> 
-   <p class="loading-text">Just a sec...</p> 
-    </div> 
+
+  <div class="break"></div>
+  
+  <section id="projects" class="projects">
+   <h2>Projects</h2>
+   <div class="projects-container">
+     <div class="project-card">
+       <h3>Devfolio</h3>
+       <p>Go & Check...👀</p>
+       <a href="https://spiderxlab.github.io/.in/" target="_blank">View Project</a>
+     </div>
+     <div class="project-card">
+       <h3>Netflix</h3>
+       <p>Go & Check...👀</p>
+       <a href="https://spiderxlab.github.io/netflix.in/" target="_blank">View Project</a>
+     </div>
+     <div class="project-card">
+       <h3>Amazon</h3>
+       <p>Go & Check...👀</p>
+       <a href="https://spiderxlab.github.io/amazon.in/" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+       <h3>Kavish Fabrication</h3>
+       <p>Go & Check...👀</p>
+       <a href="https://spiderxlab.github.io/Kfw/" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+       <h3>Uploading</h3>
+       <p>Coming Soon...👀</p>
+       <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+       <h3>Uploading</h3>
+       <p>Coming Soon...👀</p>
+       <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+       <h3>Uploading</h3>
+       <p>Coming Soon...👀</p>
+       <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="break"></div> 
   
   <!-- Gallery Section --> 
+  <div id="loader"> 
+    <div class="spinner"></div> 
+    <p class="loading-text">Just a sec...</p> 
+  </div> 
   
   <section id="gallery" class="gallery" style="display: none;">   
-   <h2>Gallery</h2>   
-   <div class="gallery-slider" id="gallerySlider">   
-    <div class="photo fade">  
-     <img src="p1.jpg" alt="p1">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p2.jpg" alt="p2">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p3.jpg" alt="p3">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p4.jpg" alt="p4">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p5.jpg" alt="p5">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p6.jpg" alt="p6">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p7.jpg" alt="p7">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p8.jpg" alt="p8">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p9.jpg" alt="p9">  
-     <p></p>  
-    </div>   
-    <div class="photo fade">  
-     <img src="p10.jpg" alt="p10">  
-     <p></p>  
-    </div>   
+    <h2>Gallery</h2>   
+    <div class="gallery-slider" id="gallerySlider">   
+      <div class="photo fade">
+        <img src="p1.jpg" alt="p1">
+        <p></p>  
+      </div>   
+      <div class="photo fade">  
+        <img src="p2.jpg" alt="p2">  
+        <p></p>  
+      </div>   
+      <div class="photo fade">  
+        <img src="p3.jpg" alt="p3">  
+        <p></p>  
+      </div>   
+      <div class="photo fade">  
+        <img src="p4.jpg" alt="p4">  
+        <p></p>  
+      </div>   
+      <div class="photo fade">  
+        <img src="p5.jpg" alt="p5">  
+       <p></p>  
+      </div>   
+      <div class="photo fade">  
+       <img src="p6.jpg" alt="p6">  
+       <p></p>  
+      </div>   
+      <div class="photo fade">  
+       <img src="p7.jpg" alt="p7">  
+       <p></p>  
+      </div>   
+      <div class="photo fade">  
+       <img src="p8.jpg" alt="p8">  
+       <p></p>  
+      </div>   
+      <div class="photo fade">  
+       <img src="p9.jpg" alt="p9">  
+       <p></p>  
+      </div>   
+      <div class="photo fade">  
+       <img src="p10.jpg" alt="p10">  
+       <p></p>  
+      </div>   
    </div>   
    <div id="dotsContainer" class="dots"></div>   
   </section>   
 
- 
-<div class="breakhi"></div>  <!-- Contact Section --> 
-     <section id="cta">
-  <div class="circle blue-bg"></div>
-  <div class="circle red-bg"></div>
-  <h2 class="cta-heading">Let's Work Together !</h2>
-  <div class="btn-group">
-    <a href="mailto:spiderxlab@gmail.com" class="btn hire" aria-label="Email SpiderX Lab">Contact</a> 
-     
+<div class="break"></div>   <!-- Contact Section --> 
 
-<a href="resume.pdf" class="btn resume" aria-label="Download Resume" onclick="downloadAndOpen(event)">Resume</a>
+  <section id="cta">
+   <div class="circle blue-bg"></div>
+   <div class="circle red-bg"></div>
+   <h2 class="cta-heading">Let's Work Together !</h2>
+    <div class="btn-group">
+     <a href="mailto:spiderxlab@gmail.com" class="btn hire" aria-label="Email SpiderX Lab">Contact</a> 
+     <a href="resume.pdf" class="btn resume" aria-label="Download Resume" onclick="downloadAndOpen(event)">Resume</a>
+    </div>
+  </section>
 
-  
-  </div>
-     </section>
   <footer> 
-   <div class="back">
-    <a href="#">BACK TO TOP</a>
-   </div> 
-<div class="break"></div> 
+    <div class="back"><a href="#">BACK TO TOP</a></div>
+    <div class="break"></div> 
+    <div id="contact" class="contact"> 
+     <p>Get In Touch</p> 
+     <div class="contacta"> 
+       <div class="cont">
+        <i class="fa-solid fa-phone" style="color: #FFD43B;"></i> <a href="tel:123860XXXX">123-860-XXXX</a>
+       </div> 
+       <div class="mail">
+        <i class="fa-solid fa-envelope" style="color: #FFD43B;"></i> <a href="mailto:spiderxlab@gmail.com">spiderxlab@gmail.com</a>
+       </div> 
+       <div class="add">
+        <i class="fa-solid fa-location-dot" style="color: #FFD43B;"></i> <a href="https://www.google.com/maps/place/Ahmedabad,+Gujarat,+India" target="_blank">Ahmedabad, Gujarat, India</a>
+       </div> 
+      </div> 
+      <p>Social Media</p> 
+      <div class="Social"> <a href="#"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></a> <a href="https://www.instagram.com/spiderx_lab"><i class="fa-brands fa-instagram" style="color: #DD2A7B;"></i></a> <a href="#"><i class="fa-brands fa-snapchat" style="color: #FFFC00;"></i></a> <a href="#"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a> <a href="#"><i class="fa-brands fa-github" style="color: white;"></i></a> <a href="#"><i class="fa-brands fa-linkedin-in" style="color: #0077B5;"></i></a> 
+      </div> 
+    </div>
 
-   <div id="contact" class="contact"> 
-    <p>Get In Touch</p> 
-    <div class="contacta"> 
-     <div class="cont">
-      <i class="fa-solid fa-phone" style="color: #FFD43B;"></i> <a href="tel:123860XXXX">123-860-XXXX</a>
-     </div> 
-     <div class="mail">
-      <i class="fa-solid fa-envelope" style="color: #FFD43B;"></i> <a href="mailto:spiderxlab@gmail.com">spiderxlab@gmail.com</a>
-     </div> 
-     <div class="add">
-      <i class="fa-solid fa-location-dot" style="color: #FFD43B;"></i> <a href="https://www.google.com/maps/place/Ahmedabad,+Gujarat,+India" target="_blank">Ahmedabad, Gujarat, India</a>
-     </div> 
-    </div> 
-    <p>Social Media</p> 
-    <div class="Social"> <a href="#"><i class="fa-brands fa-facebook-f" style="color: #1877F2;"></i></a> <a href="https://www.instagram.com/spiderx_lab"><i class="fa-brands fa-instagram" style="color: #DD2A7B;"></i></a> <a href="#"><i class="fa-brands fa-snapchat" style="color: #FFFC00;"></i></a> <a href="#"><i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i></a> <a href="#"><i class="fa-brands fa-github" style="color: white;"></i></a> <a href="#"><i class="fa-brands fa-linkedin-in" style="color: #0077B5;"></i></a> 
-    </div> 
-   </div> 
-<div class="break"></div> 
+    <div class="break"></div> 
 
-   <div class="copy"> 
-    <p>Copyright © 2024-2026</p> 
-    <p>All rights reserved</p> 
-   </div> 
+    <div class="copy"> 
+     <p>Copyright © 2024-2026</p> 
+     <p>All rights reserved</p> 
+    </div> 
   </footer> 
- </body>
-   </html>
+
+</body>
+</html>

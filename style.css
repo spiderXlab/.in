@@ -572,6 +572,8 @@ ul {
   height: 2rem;
 }
 
+
+
 footer {
   background-color: #f4e8d8;
   padding: 2rem;
@@ -599,58 +601,22 @@ footer .back a:hover {
 }
  
 footer .contacta {
-  display: flex;
+  display: block;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem 0;
-  font-size: 1rem;
-}
-footer .cont,
-footer .mail,
-footer .add {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-footer .cont {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* You can adjust this value */
-}
-
-footer .cont {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-footer .cont i {
   font-size: 1.2rem;
-  color: #7a4e2d;
-  transition: color 0.3s ease;
+  margin-top: 20px;
 }
-
-footer .cont a {
-  color: #5c3d2e;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.contacta i{
+  margin-right: 20px;
+  margin-top: 20px;
 }
-
-footer .cont a:hover {
-  color: #a65e2e;
-}
-
-footer .cont:hover i {
-  color: #a65e2e;
-}
-
 footer .Social {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 1.4rem;
 }
 
@@ -667,12 +633,18 @@ footer .Social i:hover {
 footer .copy {
   font-size: 0.85rem;
   margin-top: 1.5rem;
-  color: #7a4e2d;
+  color: #141311;
 }
 
 .contact p {
   font-size: 1.4rem;
   font-weight: bold;
   color: #5e3f2d;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
+
+.brea {
+    border-top: 1px solid #706e6e;
+    margin: 50px auto;
+    max-width: 85%;
+}    

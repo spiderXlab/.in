@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector('.back a')?.addEventListener("click", function (e) {
     e.preventDefault();
-    window.scrollTo({ top: 20, behavior: "smooth" });
+    window.scrollTo({ top: 50, behavior: "smooth" });
   });
 
   // ========================

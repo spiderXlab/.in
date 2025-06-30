@@ -188,7 +188,21 @@
      <a href="resume.pdf" class="btn resume" aria-label="Download Resume" onclick="downloadAndOpen(event)">Resume</a>
     </div>
   </section>
+  
+  <div class="break"></div>
 
+  <section id="feedback" class="feedback"> 
+    
+   <form id="contact-form" action="https://formspree.io/f/xzzrnznz" method="POST"> 
+       <h2>Have You Any Inquiry ?</h2>
+      <input type="text" name="name" placeholder="Name" required> 
+       <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required><textarea name="message" placeholder="Your Message" required></textarea> <button type="button" id="send-otp" class="cta-btn">Generate OTP</button> 
+      <input type="text" id="otp" name="otp" placeholder="Enter OTP" style="display:none;" required> <button type="submit" id="submit-btn" class="cta-btn" style="display:none;">Send Message</button>   
+   </form> 
+   <p id="thank-you"> Thank you! <i class="fa-solid fa-heart fa-beat" style="color: #f31616;"></i></p> 
+</section> 
+  
   <footer> 
     <div class="back"><a href="#">BACK TO TOP</a></div>
     <div class="break"></div> 

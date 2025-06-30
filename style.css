@@ -628,7 +628,6 @@ form textarea {
 }
 
 form textarea {
-
   height: 60px;
 }
 
@@ -652,12 +651,12 @@ form textarea {
 #thank-you {
 
   display: none;
-  color: #00cc77;
-  font-size: 18px;
+  color: #3b5e4f;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 2s ease;
 }
 
 #thank-you.show {
@@ -665,23 +664,10 @@ form textarea {
   opacity: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Divider */
 .break {
   border: 1px solid #f4e8d8;
 }
-
-
-
 
 footer {
   background-color: #f4e8d8;

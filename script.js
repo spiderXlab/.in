@@ -54,12 +54,6 @@ function initContactForm() {
   });
 }
 
-// ========================
-// 🚀 Initialize When DOM is Ready
-// ========================
-document.addEventListener("DOMContentLoaded", initContactForm);
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");

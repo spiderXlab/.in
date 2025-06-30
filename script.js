@@ -22,7 +22,7 @@ function initContactForm() {
     }
 
     generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
-    alert("Your OTP is: " + generatedOTP); // Replace this with real OTP service in production
+    alert("Your OTP is: " + generatedOTP); // Replace in production
     otpField.style.display = "block";
     otpField.focus();
   });
@@ -33,7 +33,6 @@ function initContactForm() {
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-
     const formData = new FormData(form);
 
     fetch(form.action, {
@@ -54,225 +53,146 @@ function initContactForm() {
   });
 }
 
+// ========================
+// 🚀 Initialize When DOM is Ready
+// ========================
 document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
-    hamburger.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-        hamburger.innerHTML = navLinks.classList.contains("active") ? "Ｘ" : "☰";
-    });
+  initContactForm();
 
-    
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
 
-    document.addEventListener("scroll", function () {
+  hamburger?.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    hamburger.innerHTML = navLinks.classList.contains("active") ? "Ｘ" : "☰";
+  });
+
+  document.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
-    } else {
-        navbar.style.boxShadow = "none";
+    if (navbar) {
+      navbar.style.boxShadow = window.scrollY > 50 ? "0px 4px 6px rgba(0, 0, 0, 0.1)" : "none";
     }
+  });
 
-});
-
-    // Smooth scrolling for "Contact" link
-
-    document.querySelector('.nav-item[href="#contact"]').addEventListener("click", function (event) {
-        event.preventDefault();
-        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-        navLinks.classList.remove("active"); // Close menu after clicking
+  const sections = ["home", "about", "skills", "gallery", "projects", "contact"];
+  sections.forEach(id => {
+    const link = document.querySelector(`.nav-item[href="#${id}"]`);
+    const target = document.getElementById(id);
+    if (link && target) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+        navLinks?.classList.remove("active");
         hamburger.innerHTML = "☰";
+      });
+    }
+  });
 
+  document.querySelector('.back a')?.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // ========================
+  // 🖼️ GALLERY SLIDER
+  // ========================
+  const slider = document.getElementById('gallerySlider');
+  const slides = slider?.querySelectorAll('.photo') || [];
+  const dotsContainer = document.getElementById('dotsContainer');
+  let currentIndex = 0;
+  let interval;
+
+  function createDots() {
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.textContent = index === 0 ? '●' : '○';
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
     });
-    
-      // Smooth scrolling for " about " link
-      
-    document.querySelector('.nav-item[href="#about"]').addEventListener("click", function (event) {
-        event.preventDefault();
-        document.getElementById("about").scrollIntoView({ behavior: "smooth" });
-        navLinks.classList.remove("active"); // Close menu after clicking
-        hamburger.innerHTML = "☰";
+  }
 
+  function updateDots(index) {
+    const dots = dotsContainer.querySelectorAll('span');
+    dots.forEach((dot, i) => {
+      dot.textContent = i === index ? '●' : '○';
+      dot.classList.toggle('active-dot', i === index);
     });
+  }
 
-   
-
-        // smooth scrolling for "skill
-
-    document.querySelector('.nav-item[href="#skills"]').addEventListener("click", function (event) {
-        event.preventDefault();
-        document.getElementById("skills").scrollIntoView({ behavior: "smooth" });
-        navLinks.classList.remove("active"); // Close menu after clicking
-        hamburger.innerHTML = "☰";
-
-    });
-
-
-    // smooth scrolling for "gallery
-
-    document.querySelector('.nav-item[href="#gallery"]').addEventListener("click", function (event) {
-        event.preventDefault();
-        document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
-        navLinks.classList.remove("active"); // Close menu after clicking
-        hamburger.innerHTML = "☰";
-
-    });
- 
-
-    // smooth scrolling for "Projects"
-
-    document.querySelector('.nav-item[href="#projects"]').addEventListener("click", function (event) {
-        event.preventDefault();
-        document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
-        navLinks.classList.remove("active"); // Close menu after clicking
-        hamburger.innerHTML = "☰";
+  function goToSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
     });
 
-    
-        // Smooth scrolling for "Home"
+    slider.scrollTo({ left: index * 340, behavior: 'smooth' });
+    currentIndex = index;
+    updateDots(currentIndex);
+  }
 
-    document.querySelector('.nav-item[href="#home"]').addEventListener("click", function (event) {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        navLinks.classList.remove("active"); // Close menu after clicking
-        hamburger.innerHTML = "☰";
-    });
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      goToSlide(currentIndex);
+    }, 5000);
+  }
 
-    // Smooth scrolling for "BACK TO TOP"
+  slider?.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+  slider?.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) currentIndex = (currentIndex + 1) % slides.length;
+    else if (endX - startX > 50) currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    goToSlide(currentIndex);
+  });
 
-    document.querySelector('.back a').addEventListener("click", function (event) {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') currentIndex = (currentIndex + 1) % slides.length;
+    else if (e.key === 'ArrowLeft') currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    goToSlide(currentIndex);
+  });
 
-    
-const slider = document.getElementById('gallerySlider');
-const slides = slider.querySelectorAll('.photo');
-const dotsContainer = document.getElementById('dotsContainer');
-let currentIndex = 0;
-let interval;
+  function initGallery() {
+    if (slides.length > 0) {
+      slides[0].classList.add('active');
+      createDots();
+      updateDots(0);
+      startAutoSlide();
+    }
+  }
 
-// Spinner timeout
-window.addEventListener('load', () => {
-setTimeout(() => {
-document.getElementById('loader').style.display = 'none';
-document.querySelector('.gallery').style.display = 'block';
-initGallery();
-}, 1500);
-});
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader')?.style.setProperty('display', 'none');
+      document.querySelector('.gallery')?.style.setProperty('display', 'block');
+      initGallery();
+    }, 1500);
+  });
 
-// Setup dots
-function createDots() {
-slides.forEach((_, index) => {
-const dot = document.createElement('span');
-dot.textContent = index === 0 ? '●' : '○';
-dot.addEventListener('click', () => {
-goToSlide(index);
-});
-dotsContainer.appendChild(dot);
-});
-}
-
-// Update dots
-function updateDots(index) {
-const dots = dotsContainer.querySelectorAll('span');
-dots.forEach((dot, i) => {
-dot.textContent = i === index ? '●' : '○';
-dot.classList.toggle('active-dot', i === index);
-});
-}
-
-// Slide to specific index
-function goToSlide(index) {
-slides.forEach((slide, i) => {
-slide.classList.remove('active');
-if (i === index) {
-slide.classList.add('active');
-}
-});
-
-slider.scrollTo({
-left: index * (340), // image + gap
-behavior: 'smooth'
-});
-
-currentIndex = index;
-updateDots(currentIndex);
-}
-
-// Auto slide
-function startAutoSlide() {
-interval = setInterval(() => {
-currentIndex = (currentIndex + 1) % slides.length;
-goToSlide(currentIndex);
-}, 5000);
-}
-
-// Swipe control for mobile
-let startX = 0;
-slider.addEventListener('touchstart', (e) => {
-startX = e.touches[0].clientX;
-});
-
-slider.addEventListener('touchend', (e) => {
-const endX = e.changedTouches[0].clientX;
-if (startX - endX > 50) {
-currentIndex = (currentIndex + 1) % slides.length;
-} else if (endX - startX > 50) {
-currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-}
-goToSlide(currentIndex);
-});
-
-// Keyboard control
-document.addEventListener('keydown', (e) => {
-if (e.key === 'ArrowRight') {
-currentIndex = (currentIndex + 1) % slides.length;
-goToSlide(currentIndex);
-} else if (e.key === 'ArrowLeft') {
-currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-goToSlide(currentIndex);
-}
-});
-
-// Init
-function initGallery() {
-slides[0].classList.add('active');
-createDots();
-updateDots(0);
-startAutoSlide();
-}
-
-    
- const cta = document.getElementById("cta");
-
+  // ========================
+  // 🎯 CTA Reveal on Scroll
+  // ========================
+  const cta = document.getElementById("cta");
   function revealCTA() {
+    if (!cta) return;
     const rect = cta.getBoundingClientRect();
     if (rect.top < window.innerHeight - 100) {
       cta.classList.add("reveal");
       window.removeEventListener("scroll", revealCTA);
     }
   }
-
   window.addEventListener("scroll", revealCTA);
   revealCTA();
 
-
-    function downloadAndOpen(event) {
-  event.preventDefault();
-  const link = document.createElement('a');
-  link.href = 'resume.pdf';
-  link.download = 'resume.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
-  // Open in new tab
-  window.open('resume.pdf', '_blank');
-    }
-
+  // ========================
+  // 📄 Resume Download
+  // ========================
+  window.downloadAndOpen = function (event) {
+    event.preventDefault();
+    const link = document.createElement('a');
+    link.href = 'resume.pdf';
+    link.download = 'resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.open('resume.pdf', '_blank');
+  }
 });
-
-
-
-
-                          

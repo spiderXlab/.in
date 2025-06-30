@@ -215,6 +215,7 @@ startAutoSlide();
   window.open('resume.pdf', '_blank');
     }
 
+});
 
 // ========================
   // 📩 CONTACT FORM + OTP
@@ -265,11 +266,6 @@ startAutoSlide();
       });
     });
   }
-
-    
-});
-
-
 
 
 

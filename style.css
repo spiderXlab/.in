@@ -180,23 +180,22 @@ ul {
   color: #a65e2e;
   margin-bottom: 2rem;
 }
-/*
-.skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .8Rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
-*/
+/*
 .skill-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 2rem;
   max-width: 900px;
   margin: 0 auto;
-}
+}*/
 .skill {
   width: 150px;
   background-color: #fff;

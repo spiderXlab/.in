@@ -58,40 +58,46 @@ function initContactForm() {
 // ========================
 document.addEventListener("DOMContentLoaded", function () {
   initContactForm();
+// ========================
+// 🍔 Hamburger Menu & Smooth Scroll (with 20px offset)
+// ========================
 
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+const navbar = document.querySelector(".navbar");
 
-  hamburger?.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-    hamburger.innerHTML = navLinks.classList.contains("active") ? "Ｘ" : "☰";
-  });
+hamburger?.addEventListener("click", () => {
+  navLinks?.classList.toggle("active");
+  hamburger.textContent = navLinks?.classList.contains("active") ? "Ｘ" : "☰";
+});
 
-  document.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-    if (navbar) {
-      navbar.style.boxShadow = window.scrollY > 50 ? "0px 4px 6px rgba(0, 0, 0, 0.1)" : "none";
-    }
-  });
+window.addEventListener("scroll", () => {
+  if (navbar) {
+    navbar.style.boxShadow = window.scrollY > 50 ? "0 4px 6px rgba(0,0,0,0.1)" : "none";
+  }
+});
 
-  const sections = ["#home", "about", "skills", "gallery", "projects", "feedback", "contact"];
-  sections.forEach(id => {
-    const link = document.querySelector(`.nav-item[href="#${id}"]`);
-    const target = document.getElementById(id);
-    if (link && target) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-        navLinks?.classList.remove("active");
-        hamburger.innerHTML = "☰";
-      });
-    }
-  });
+const sections = ["home", "about", "skills", "projects", "gallery", "feedback", "contact"];
+sections.forEach(id => {
+  const link = document.querySelector(`.nav-item[href="#${id}"]`);
+  const target = document.getElementById(id);
+  if (link && target) {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const offset = 90;
+      const top = target.offsetTop - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+      navLinks?.classList.remove("active");
+      hamburger.textContent = "☰";
+    });
+  }
+});
 
-  document.querySelector('.back a')?.addEventListener("click", function (e) {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+document.querySelector('.back a')?.addEventListener("click", e => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 
   // ========================
   // 🖼️ GALLERY SLIDER

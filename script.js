@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const sections = ["home", "about", "skills", "gallery", "projects", "feedback", "contact"];
+  const sections = ["#", "about", "ski", "gall", "pro", "feed", "contact"];
   sections.forEach(id => {
     const link = document.querySelector(`.nav-item[href="#${id}"]`);
     const target = document.getElementById(id);

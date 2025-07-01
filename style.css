@@ -171,7 +171,7 @@ ul {
 /* Skills Section */
 .skills {
   background-color: #f8f1e9;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
 }
 
@@ -248,7 +248,7 @@ ul {
 /* Projects Section */
 .projects {
   background-color: #fffaf4;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
 }
 
@@ -398,7 +398,7 @@ letter-spacing: 1px;
 /* Gallery */
 .gallery {
   background-color: #f8f1e9;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
 }
 
@@ -601,7 +601,7 @@ transform: scale(1.4);
 .feedback {
 
   text-align: center;
-  padding: 40px 40px;
+  padding: 3rem 2rem;
   background-color: #f8f1e9;
 }
 
@@ -671,7 +671,7 @@ form textarea {
 
 footer {
   background-color: #f4e8d8;
-  padding: 2rem;
+  padding: 3rem;
   color: #3a3a3a;
   font-family: 'Georgia', serif;
   text-align: center;

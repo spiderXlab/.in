@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const sections = ["#", "about", "ski", "gall", "pro", "feed", "contact"];
+  const sections = ["#home", "about", "skills", "gallery", "projects", "feedback", "contact"];
   sections.forEach(id => {
     const link = document.querySelector(`.nav-item[href="#${id}"]`);
     const target = document.getElementById(id);
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector('.back a')?.addEventListener("click", function (e) {
     e.preventDefault();
-    window.scrollTo({ top: "30px", behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // ========================

@@ -156,6 +156,7 @@ ul {
   font-size: 2.5rem;
   color: #a65e2e;
   margin-bottom: 1.5rem;
+  text-shadow: 1px 1px #ffffff;
 }
 
 .about p {
@@ -179,6 +180,7 @@ ul {
   font-size: 2.3rem;
   color: #a65e2e;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px #ffffff;
 }
   .skill-list {
     display: flex;
@@ -256,6 +258,7 @@ ul {
   font-size: 2.3rem;
   color: #a65e2e;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px #ffffff;
 }
 
 .projects-container {
@@ -304,19 +307,19 @@ ul {
 }
 
 .project-card:nth-child(1) a {
-  background: linear-gradient(to right, #7a4e2d, #9c6e4c);
+  background: linear-gradient(to right, #ff7eb3, #ff4b2b);
 }
 
 .project-card:nth-child(2) a {
-  background: linear-gradient(to right, #5a3e2d, #865d4c);
+  background: linear-gradient(to right, #00c6ff, #0072ff);
 }
 
 .project-card:nth-child(3) a {
-  background: linear-gradient(to right, #4e392e, #7f5d47);
+  background: linear-gradient(to right, #ff9a00, #ff6a00);
 }
 
 .project-card:nth-child(4) a {
-  background: linear-gradient(to right, #6f4e37, #9d7650);
+  background: linear-gradient(to right, #64dd17, #aeea00);
 }
 
 .project-card:nth-child(5) a,
@@ -406,6 +409,7 @@ letter-spacing: 1px;
 font-size: 2.3rem;
   color: #a65e2e;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px #ffffff;
 }
 
 .gallery-slider {
@@ -539,6 +543,7 @@ transform: scale(1.4);
   color: #5e3f2d;
   position: relative;
   z-index: 1;
+  text-shadow: 1px 1px #ffffff;
 }
 
 .btn-group {
@@ -610,6 +615,7 @@ transform: scale(1.4);
   font-size: 2.3rem;
   margin-bottom: 35px;
   color: #5e3f2d;
+  text-shadow: 1px 1px #ffffff;
 }
 
 form input,
@@ -657,6 +663,7 @@ form textarea {
   margin-top: 20px;
   opacity: 0;
   transition: opacity 2s ease;
+  text-shadow: 1px 1px #ffffff;
 }
 
 #thank-you.show {

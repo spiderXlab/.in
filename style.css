@@ -824,6 +824,28 @@ footer .copy {
 
 
 
+#languageSelect {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.05); /* Transparent glass */
+  color: #7a4e2d; /* Neon cyan text */
+  border: 1px solid rgba(193, 38, 11, 0.4);
+  border-radius: 5px;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+/* Dropdown Options */
+#languageSelect option {
+  background-color: #5e3f2d; /* Dark dropdown background */
+  color: rgb(255, 253, 253);            /* Neon text */
+}
+
+
+
 
 .brea {
     border-top: 1px solid #706e6e;

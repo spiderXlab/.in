@@ -190,14 +190,7 @@ ul {
     max-width: 900px;
     margin: 0 auto;
 }
-/*
-.skill-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}*/
+
 .skill {
   width: 150px;
   background-color: #fff;
@@ -224,12 +217,14 @@ ul {
   margin: 0;
 }
 
-.skill.html i { color: #e34c26; }
-.skill.css i { color: #264de4; }
-.skill.js i { color: #f0db4f; }
-.skill.react i { color: #61dafb; }
-.skill.c i { color: #5e97d0; }
-.skill.github i { color: #171515; }
+.skill.java i {color: #f89820;}
+.skill.html i {color: #e34c26;}
+.skill.css i  {color: #264de4;}
+.skill.js i   {color: #f7df1e;}
+.skill.react i  {color: #61dafb;}
+.skill.github i {color: #181717;}
+.skill.c i   {color: #00599c;}
+.skill.dsa i {color: #ff9800;}
 
 .skill:hover {
   transform: translateY(-5px);
